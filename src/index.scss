@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+  body {
+    font-family: "DM Sans", sans-serif;
+    @apply bg-black bg-opacity-90 font-body text-white text-base;
+  }
+}
+
+@layer components {
+  svg {
+    height: 1.6rem;
+    width: 1.6rem;
+    fill: currentColor;
+    margin: 0 0.2rem;
+    &.bookmark {
+      fill: yellow;
+    }
+  }
+}
+
+.quickSearchContainer:focus-within {
+  & .quickSearchResults {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.menuItem.active {
+  @apply text-primary;
+}
+.swiper {
+  width: 100%;
+}
+.overlayMovie {
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+}
+.movie-layout {
+  &.swiper-wrapper {
+    display: flex;
+  }
+  .swiper-slide {
+    height: auto;
+  }
+}
+.pagination {
+  padding: 40px 0;
+  margin: 0 auto;
+  display: flex;
+  column-gap: 20px;
+  & .pagLink {
+    padding: 10px;
+    @apply bg-gray-300 bg-opacity-25;
+  }
+  & .pagLink.pagActive {
+    @apply text-primary;
+  }
+}
